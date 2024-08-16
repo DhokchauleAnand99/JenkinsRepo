@@ -4,7 +4,7 @@ pipeline
   stages{
          stage{
                steps{
-                      git url:'https://github.com/DhokchauleAnand99/devops.git',branch:'main'
+                      git url:'https://github.com/DhokchauleAnand99/JenkinsRepo.git',branch:'main'
                     }
               }
          stage("Build docker image"){
@@ -12,10 +12,10 @@ pipeline
                       sh 'docker build -t myimage .'
                     }
               }
-          stage("Create Container"){
+         stage("Create Container"){
                steps{
                       sh 'docker run -d -p 8501:8501 myimage'
                     }
               }
-    }
+       }
 }
