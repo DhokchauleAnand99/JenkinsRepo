@@ -1,2 +1,2 @@
-mport streamlit as st
+mport streamlit as st # type: ignore
 st.write('Welcome to jenkins')
