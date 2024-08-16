@@ -2,20 +2,20 @@ pipeline
 {
   agent any
   stages{
-         stage{
-               steps{
-                      git url:'https://github.com/DhokchauleAnand99/JenkinsRepo.git',branch:'main'
-                    }
+     stage("Checkout Code Stage"){
+         steps{
+                git url:'https://github.com/DhokchauleAnand99/JenkinsRepo.git',branch:'main'
               }
-         stage("Build docker image"){
+           }
+           stage("Build docker image"){
                steps{
                       sh 'docker build -t myimage .'
-                    }
-              }
-         stage("Create Container"){
+                  }
+           }
+           stage("Create container"){
                steps{
                       sh 'docker run -d -p 8501:8501 myimage'
-                    }
-              }
-       }
+                  }
+            }
+      }
 }
